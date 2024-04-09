@@ -12,7 +12,7 @@ pipeline {
             steps {
                 echo 'buildteset';
                  dir('my-app'){
-                 sh 'npm run build'
+                 npm run build
                  }
             }
         }
