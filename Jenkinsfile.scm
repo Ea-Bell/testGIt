@@ -12,6 +12,7 @@ pipeline {
             steps {
                 echo 'buildteset'
                  dir('my-app'){
+                    sh 'npm install'
                     sh 'npm run build'
                  }
             }
