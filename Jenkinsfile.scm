@@ -7,6 +7,9 @@ pipeline {
                     credentialsId: 'rayful',
                     url: 'https://github.com/Ea-Bell/testGItJenkinsTest.git'
             }
+            steps{
+                echo "Current working directory: ${pwd()}"
+            }
         }
         stage('build'){
             steps {
