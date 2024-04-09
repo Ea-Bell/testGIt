@@ -7,14 +7,12 @@ pipeline {
                     credentialsId: 'rayful',
                     url: 'https://github.com/Ea-Bell/testGItJenkinsTest.git'
             }
-            steps{
-                echo 'step2 Test입니다'
-            }
         }
         stage('build'){
             steps {
-                echo 'buildteset'
-                // npm run build
+                echo 'buildteset'`
+                 cd my-app
+                 npm run build
             }
         }
     }
