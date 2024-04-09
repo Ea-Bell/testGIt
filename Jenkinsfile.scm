@@ -8,11 +8,18 @@ pipeline {
                     url: 'https://github.com/Ea-Bell/testGItJenkinsTest.git'
             }
         }
-        stage('build'){
+        stage('npm install'){
+            steps {
+                echo 'install'
+                 dir('my-app'){
+                    sh 'npm install'
+                 }
+            }
+        }
+        stage('npm build'){
             steps {
                 echo 'buildteset'
                  dir('my-app'){
-                    sh 'npm install'
                     sh 'npm run build'
                  }
             }
