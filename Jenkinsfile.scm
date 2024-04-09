@@ -7,7 +7,7 @@ pipeline {
                     credentialsId: 'rayful',
                     url: 'https://github.com/Ea-Bell/testGItJenkinsTest.git'
             }
-            stage('build'){
+            steps('build'){
             git clone 'https://github.com/Ea-Bell/testGItJenkinsTest.git'
         }
         }
