@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage('Checkout') {
+        stage('gitHubHook') {
             steps {
                 git branch: 'main',
                     credentialsId: 'rayful',
