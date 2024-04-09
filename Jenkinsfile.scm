@@ -10,7 +10,10 @@ pipeline {
         }
         stage('build'){
             steps {
-               git clone 'https://github.com/Ea-Bell/testGItJenkinsTest.git'
+               sh 
+               '''
+                npm run build
+               '''
             }
         }
     }
