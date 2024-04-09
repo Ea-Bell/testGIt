@@ -12,10 +12,6 @@ function App() {
         <p>test</p>
         <p>test</p>
         <p>test</p>
-        <p>test</p>
-        <p>test</p>
-        <p>test</p>
-        <p>test</p>
         <a
           className="App-link"
           href="https://reactjs.org"
