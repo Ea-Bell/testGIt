@@ -24,5 +24,13 @@ pipeline {
                  }
             }
         }
+        stage('send buildFile'){
+            steps{
+                echo 'send builFile jenkins -> targetServer'
+                dir('my-app'){
+                    bat 'scp -r build EaBell@192.168.10.182:~/temp'
+                }
+            }
+        }
     }
 }
