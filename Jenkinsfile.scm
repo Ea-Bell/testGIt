@@ -12,7 +12,7 @@ pipeline {
             steps {
                 echo 'install'
                  dir('my-app'){
-                    sh 'npm install'
+                    bat 'npm install'
                  }
             }
         }
