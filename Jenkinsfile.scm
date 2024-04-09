@@ -10,9 +10,10 @@ pipeline {
         }
         stage('build'){
             steps {
-                echo 'buildteset'`
-                 cd my-app
-                 npm run build
+                echo 'buildteset';
+                 dir('my-app'){
+                 sh 'npm run build'
+                 }
             }
         }
     }
