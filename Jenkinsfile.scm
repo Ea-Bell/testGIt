@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage('ready') {
+        stage('GitHub Repository Clone') {
             steps {
                 git branch: 'main',
                     credentialsId: 'rayful',
@@ -10,7 +10,11 @@ pipeline {
         }
         stage('build'){
             steps {
-                npm run build
+                sh 
+                '''
+                    echo build Test
+                '''
+                // npm run build
             }
         }
     }
