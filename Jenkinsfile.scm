@@ -16,13 +16,13 @@ pipeline {
                  }
             }
         }
-        // stage('npm build'){
-        //     steps {
-        //         echo 'buildteset'
-        //          dir('my-app'){
-        //             sh 'npm run build'
-        //          }
-        //     }
-        // }
+        stage('npm build'){
+            steps {
+                echo 'buildteset'
+                 dir('my-app'){
+                    bat 'npm run build'
+                 }
+            }
+        }
     }
 }
