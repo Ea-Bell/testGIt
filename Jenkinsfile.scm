@@ -24,14 +24,6 @@ pipeline {
                  }
             }
         }
-        stage('before build remove'){
-            steps{
-                echo '이전 빌드 삭제 프로세스'
-                dir('my-app'){
-                    //bat "ssh EaBell@192.168.10.173 'cd ~/temp | rm -rf build'"
-                }
-            }
-        }
         stage('send buildFile'){
             steps{
                 echo 'send builFile jenkins -> targetServer'
