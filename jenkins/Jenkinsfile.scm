@@ -1,5 +1,9 @@
 pipeline {
     agent any
+
+    environment {
+        TARGET_SERVER_IP = readFile('..jenkinsEnv').trim()
+    }
     stages {
         stage('GitHub Repository Clone') {
             steps {
@@ -36,7 +40,7 @@ pipeline {
             steps{
                 echo 'send builFile jenkins -> targetServer'
                 dir('my-app'){
-                    bat 'scp -r build EaBell@192.168.10.173:~/temp'
+                    bat 'sftp -r build EaBell@192.168.10.173:~/temp'
                     bat 'ssh EaBell@192.168.10.173 "chmod -R 755 /home/EaBell/temp/build"'
                 }
             }
