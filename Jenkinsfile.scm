@@ -28,7 +28,7 @@ pipeline {
             steps{
                 echo 'test'
                 dir('my-app'){
-                    bat 'ssh EaBell@192.168.10.133 "rm -rf /home/EaBell/build"'
+                    bat 'ssh EaBell@192.168.10.173 "rm -rf /home/EaBell/build"'
                 }
             }
         }
