@@ -1,9 +1,5 @@
 pipeline {
     agent any
-
-    environment {
-        TARGET_SERVER_IP = readFile('..jenkinsEnv').trim()
-    }
     stages {
         stage('GitHub Repository Clone') {
             steps {
