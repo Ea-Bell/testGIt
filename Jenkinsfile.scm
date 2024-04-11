@@ -24,7 +24,7 @@ pipeline {
                  }
             }
         }
-        staget('이전 빌드 삭제'){
+        staget('before build remove'){
             steps{
                 echo '이전 빌드 삭제 프로세스'
                 dir('my-app'){
