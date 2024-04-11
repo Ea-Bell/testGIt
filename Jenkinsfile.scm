@@ -37,6 +37,7 @@ pipeline {
                 echo 'send builFile jenkins -> targetServer'
                 dir('my-app'){
                     bat 'scp -r build EaBell@192.168.10.173:~/temp'
+                    bat 'ssh EaBell@192.168.10.173 "chmod -R 755 /home/EaBell/temp/build"'
                 }
             }
         }
