@@ -24,21 +24,18 @@ pipeline {
                  }
             }
         }
-        stage('before build remove'){
+        stage('before remove buildFile'){
             steps{
-                echo '이전 빌드 삭제 프로세스'
-                // dir('my-app'){
-                //     //bat "ssh EaBell@192.168.10.173 'cd ~/temp | rm -rf build'"
-                // }
+                echo 'test'
             }
         }
-        // stage('send buildFile'){
-        //     steps{
-        //         echo 'send builFile jenkins -> targetServer'
-        //         dir('my-app'){
-        //             bat 'scp -r build EaBell@192.168.10.173:~/temp'
-        //         }
-        //     }
-        // }
+        stage('send buildFile'){
+            steps{
+                echo 'send builFile jenkins -> targetServer'
+                dir('my-app'){
+                    bat 'scp -r build EaBell@192.168.10.173:~/temp'
+                }
+            }
+        }
     }
 }
