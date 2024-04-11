@@ -27,15 +27,18 @@ pipeline {
         stage('before remove buildFile'){
             steps{
                 echo 'test'
-            }
-        }
-        stage('send buildFile'){
-            steps{
-                echo 'send builFile jenkins -> targetServer'
                 dir('my-app'){
-                    bat 'scp -r build EaBell@192.168.10.173:~/temp'
+                    bat "ssh EaBell@192.168.10.173 'rm -rf /home/EaBell/build'"
                 }
             }
         }
+        // stage('send buildFile'){
+        //     steps{
+        //         echo 'send builFile jenkins -> targetServer'
+        //         dir('my-app'){
+        //             bat 'scp -r build EaBell@192.168.10.173:~/temp'
+        //         }
+        //     }
+        // }
     }
 }
