@@ -17,6 +17,7 @@ pipeline {
                 url: env.GIT_URL
             }
         }
+        
         stage('npm build') {
             steps {
                 echo 'build test'
