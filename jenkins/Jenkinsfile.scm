@@ -33,15 +33,15 @@ pipeline {
                  }
             }
         }
-        stage('Deploy'){
-            steps{
-                echo 'send builFile jenkins -> targetServer'
-                dir('my-app'){
-                    bat "ssh ${env.TARGET_ID}@${env.TARGET_IP} 'rm -rf ${env.TARGET_BUILD_FILEPATH}'"
-                    bat "scp -r build ${env.TARGET_ID}@${env.TARGET_IP}:${env.TARGET_BUILD_FILEPATH}"
-                    bat "ssh ${env.TARGET_ID}@${env.TARGET_IP} 'chmod -R 755 ${env.TARGET_BUILD_FILEPATH}'"
-                }
-            }
-        }
+        // stage('Deploy'){
+        //     steps{
+        //         echo 'send builFile jenkins -> targetServer'
+        //         dir('my-app'){
+        //             bat "ssh ${env.TARGET_ID}@${env.TARGET_IP} 'rm -rf ${env.TARGET_BUILD_FILEPATH}'"
+        //             bat "scp -r build ${env.TARGET_ID}@${env.TARGET_IP}:${env.TARGET_BUILD_FILEPATH}"
+        //             bat "ssh ${env.TARGET_ID}@${env.TARGET_IP} 'chmod -R 755 ${env.TARGET_BUILD_FILEPATH}'"
+        //         }
+        //     }
+        // }
     }
 }
