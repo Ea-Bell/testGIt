@@ -18,8 +18,8 @@ pipeline {
         stage('GitHub Repository Clone') {
             steps {
                 git branch: env.GIT_BRANCH,
-                    credentialsId: "${JENKINS_CREDENTIALSID}",
-                    url: env.GIT_URL
+                credentialsId: JENKINS_CREDENTIALSID,
+                url: env.GIT_URL
             }
         }
         stage('npm build') {
