@@ -31,8 +31,8 @@ pipeline {
                 echo "send buildFile jenkins -> targetServer"
                 dir('my-app') {
                     bat '''
-                        ssh ${env.TARGET_ID}@${env.TARGET_IP} 'rm -rf ${env.TARGET_BUILD_FILEPATH}'
-                        scp -r build ${env.TARGET_ID}@${env.TARGET_IP}:${env.TARGET_BUILD_FILEPATH}
+                        ssh ${env.TARGET_ID}@${env.TARGET_IP} 'rm -rf ${env.TARGET_BUILD_FILEPATH}' ||
+                        scp -r build ${env.TARGET_ID}@${env.TARGET_IP}:${env.TARGET_BUILD_FILEPATH} ||
                         ssh ${env.TARGET_ID}@${env.TARGET_IP} 'chmod -R 755 ${env.TARGET_BUILD_FILEPATH}'
                         '''
                 }
