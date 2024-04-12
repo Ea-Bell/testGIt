@@ -1,8 +1,5 @@
 pipeline {
     agent any
-    environment {
-        SSH_CONFIG_NAME = 'MySSHServer' // SSH 구성 이름 설정
-    }
     stages {
         stage('GitHub Repository Clone') {
             steps {
