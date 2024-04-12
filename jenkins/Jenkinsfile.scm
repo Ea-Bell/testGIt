@@ -13,7 +13,7 @@ pipeline {
         stage('GitHub Repository Clone') {
             steps {
                 git branch: env.GIT_BRANCH,
-                credentialsId: JENKINS_CREDENTIALSID,
+                credentialsId: env.JENKINS_CREDENTIALSID,
                 url: env.GIT_URL
             }
         }
