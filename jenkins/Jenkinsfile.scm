@@ -11,19 +11,17 @@ pipeline {
             GIT_BRANCH= 'main'
         //##############################################################
 
-         //###################### 설정################################
+        //######################설정####################################
             TARGET_IP='192.168.10.173'
             TARGET_ID='EaBell'
             TARGET_BUILD_FILEPATH='/home/EaBell/temp/build' 
-
-            
         //##############################################################
     }
     stages {
         stage('GitHub Repository Clone') {
             steps {
                 git branch: env.GIT_BRANCH,
-                    credentialsId: "${JENKINS_CREDENTIALSID}",
+                    credentialsId: env.JENKINS_CREDENTIALSID,
                     url: env.GIT_URL
             }
         }
