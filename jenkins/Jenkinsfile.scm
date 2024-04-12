@@ -36,9 +36,10 @@ pipeline {
                 dir('my-app') {
                     bat """
                         ssh ${TARGET_ID}@${TARGET_IP} "rm -rf ${TARGET_BUILD_FILEPATH}/${TARGET_BUILD_FILE}"
-                        scp -r build ${TARGET_ID}@${TARGET_IP}:${TARGET_BUILD_FILEPATH}
-                        ssh ${TARGET_ID}@${TARGET_IP} "chmod -R 755 ${TARGET_BUILD_FILEPATH}"
                         """
+                    bat """
+                        scp -r build ${TARGET_ID}@${TARGET_IP}:${TARGET_BUILD_FILEPATH}
+                        """    
                 }
             }
         }
