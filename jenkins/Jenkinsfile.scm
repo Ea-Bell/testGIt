@@ -41,7 +41,10 @@ pipeline {
                         """
                     bat """
                         scp -r build ${TARGET_ID}@${TARGET_IP}:${TARGET_BUILD_FILEPATH}
-                        """    
+                        """
+                    bat """
+                        ssh ${TARGET_ID}@${TARGET_IP} "chmod -R 755 ${TARGET_BUILD_FILEPATH}/${TARGET_BUILD_FILE}"
+                        """           
                 }
             }
         }
