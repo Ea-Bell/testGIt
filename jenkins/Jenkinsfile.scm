@@ -1,6 +1,5 @@
 pipeline {
     agent any
-
     environment {
         //######################젠킨스 설정##############################
             JENKINS_CREDENTIALSID= 'rayful'
