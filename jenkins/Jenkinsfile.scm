@@ -24,15 +24,15 @@ pipeline {
                 url: 'https://github.com/Ea-Bell/testGItJenkinsTest.git'
             }
         }
-        stage('npm build'){
-            steps {
-                echo 'buildteset'
-                 dir('my-app'){
-                    bat 'npm install'
-                    bat 'npm run build'
-                 }
-            }
-        }
+        // stage('npm build'){
+        //     steps {
+        //         echo 'buildteset'
+        //          dir('my-app'){
+        //             bat 'npm install'
+        //             bat 'npm run build'
+        //          }
+        //     }
+        // }
         // stage('Deploy'){
         //     steps{
         //         echo 'send builFile jenkins -> targetServer'
