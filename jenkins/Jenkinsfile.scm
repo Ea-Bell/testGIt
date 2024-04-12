@@ -22,7 +22,7 @@ pipeline {
             steps {
                 git branch: 'main',
                 credentialsId: 'JENKINS_CREDENTIALSID',
-                url: 'GIT_URL'
+                url: 'https://github.com/Ea-Bell/testGItJenkinsTest.git'
             }
         }
         stage('npm build'){
