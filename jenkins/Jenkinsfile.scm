@@ -7,7 +7,8 @@ pipeline {
         GIT_BRANCH= 'main'
         TARGET_IP='192.168.10.173'
         TARGET_ID='EaBell'
-        TARGET_BUILD_FILEPATH='/home/EaBell/temp' 
+        TARGET_BUILD_FILEPATH='/home/EaBell/temp'
+        TARGET_BUILD_FILE='build' 
     }
     stages {
         stage('GitHub Repository Clone') {
@@ -34,9 +35,9 @@ pipeline {
                 echo "send buildFile jenkins -> targetServer"
                 dir('my-app') {
                     bat """
-                        ssh ${TARGET_ID}@${TARGET_IP} "rm -rf ${TARGET_BUILD_FILEPATH}/build"
+                        ssh ${TARGET_ID}@${TARGET_IP} "rm -rf ${TARGET_BUILD_FILEPATH}/${TARGET_BUILD_FILE}"
                         scp -r build ${TARGET_ID}@${TARGET_IP}:${TARGET_BUILD_FILEPATH}
-                        ssh ${TARGET_ID}@${TARGET_IP} "chmod -R 755 ${TARGET_BUILD_FILEPATH}"
+                        ssh ${TARGET_ID}@${TARGET_IP} "chmod -R 755 ${TARGET_BUILD_FILEPATH}/${TARGET_BUILD_FILE}"
                         """
                 }
             }
