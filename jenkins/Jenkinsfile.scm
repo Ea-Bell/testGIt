@@ -15,6 +15,8 @@ pipeline {
             TARGET_IP='192.168.10.173'
             TARGET_ID='EaBell'
             TARGET_BUILD_FILEPATH='/home/EaBell/temp/build' 
+
+            
         //##############################################################
     }
     stages {
