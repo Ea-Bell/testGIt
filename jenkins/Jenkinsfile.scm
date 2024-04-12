@@ -25,6 +25,8 @@ pipeline {
                 dir('my-app') {
                     bat """
                         npm install
+                        """
+                    bat """
                         npm run build
                         """
                 }
