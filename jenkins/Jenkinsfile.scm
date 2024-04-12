@@ -21,8 +21,10 @@ pipeline {
             steps {
                 echo 'build test'
                 dir('my-app') {
-                    bat 'npm install'
-                    bat 'npm run build'
+                    bat """
+                        npm install
+                        npm run build
+                        """
                 }
             }
         }
