@@ -12,9 +12,9 @@ pipeline {
     stages {
         stage('GitHub Repository Clone') {
             steps {
-                git branch: ${GIT_BRANCH},
-                    credentialsId: ${CREDENTIALSID},
-                    url: ${GIT_URL}
+                git branch: ${env.GIT_BRANCH},
+                    credentialsId: ${env.CREDENTIALSID},
+                    url: ${env.GIT_URL}
             }
         }
         stage('npm build'){
@@ -30,9 +30,9 @@ pipeline {
             steps{
                 echo 'send builFile jenkins -> targetServer'
                 dir('my-app'){
-                    bat 'ssh '{TARGET_ID}'@'${TARGET_IP}' "rm -rf '${TARGET_BUILD_FILEPATH}'"'
-                    bat 'scp -r build '{TARGET_ID}'@'${TARGET_IP}':'${TARGET_BUILD_FILEPATH}''
-                    bat 'ssh '{TARGET_ID}'@'${TARGET_IP}' "chmod -R 755 '${TARGET_BUILD_FILEPATH}'"'
+                    bat "ssh ${env.TARGET_ID}@${env.TARGET_IP} 'rm -rf ${env.TARGET_BUILD_FILEPATH}'"
+                    bat "scp -r build ${env.TARGET_ID}@${env.TARGET_IP}:${env.TARGET_BUILD_FILEPATH}"
+                    bat "ssh ${env.TARGET_ID}@${env.TARGET_IP} 'chmod -R 755 ${env.TARGET_BUILD_FILEPATH}'"
                 }
             }
         }
