@@ -28,6 +28,8 @@ pipeline {
                 }
             }
         }
+
+        
         stage('Deploy') {
             steps {
                 echo "send buildFile jenkins -> targetServer"
