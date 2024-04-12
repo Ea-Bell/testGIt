@@ -27,6 +27,9 @@ pipeline {
                         npm install
                         """
                     bat """
+                        npm run clean
+                        """
+                    bat """
                         npm run build
                         """
                 }
